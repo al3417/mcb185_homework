@@ -6,13 +6,13 @@ def findE(a, c, g, t):
     if total == 0:
         return '0'
 
-    def proportion(count):
-        if count > 0:
-            pos = count / total
-            return -(pos) * (math.log2(pos))
+    def ind_entropy(nt_count):
+        if nt_count > 0:
+            p = nt_count / total
+            return -(p) * (math.log2(p))
         else: return 0
 
-    entropy = (proportion(a) + proportion(c) + proportion(g) + proportion(t))
+    entropy = (ind_entropy(a) + ind_entropy(c) + ind_entropy(g) + ind_entropy(t))
     
     return entropy
 
@@ -20,4 +20,4 @@ def findE(a, c, g, t):
 print(findE(4,2,3,7))       # Entropy = 1.849
 print(findE(1,1,1,1))       # Entropy = 2
 print(findE(4,4,0,0))       # Entropy = 1.0
-
+print(findE(2,0,2,0))       # Entropy = 1.0
