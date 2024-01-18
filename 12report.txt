@@ -1,0 +1,14 @@
+Sat Jan 13 09:04:40 PM PST 2024
+Variable USER has contents: zhe
+Variable HOME has contents: /home/zhe
+Variable SHELL has contents: /bin/bash
+Variable PWD has contents: /home/zhe/Code/mcb185_homework
+Variable PATH has contents: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin]
+Linux zhe-ThinkPad-X1-Carbon-Gen-9 5.15.0-91-generic #101-Ubuntu SMP Tue Nov 14 13:30:08 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+Python 3.10.12
+/home/zhe/Code
+/home/zhe/Code/mcb185_homework
+/home/zhe/Code/mcb185_homework/.git
+/home/zhe/Code/MCB185
+/home/zhe/Code/MCB185/.git
+/home/zhe/Code/MCB185/data

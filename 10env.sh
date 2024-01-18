@@ -1,0 +1,5 @@
+echo "Variable USER has contents: $USER"
+echo "Variable HOME has contents: $HOME"
+echo "Variable SHELL has contents: $SHELL"
+echo "Variable PWD has contents: $PWD"
+echo "Variable PATH has contents: $PATH]"
