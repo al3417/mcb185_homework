@@ -29,7 +29,7 @@ def find_e(a, c, g, t):
 		e_t = -(p_t) * (math.log2(p_t))
 	else:
 		e_t = 0
-    
+
 		p_a = a / total 
 		e_a = -(p_a) * (math.log2(p_a))
 	entropy = (e_a + e_c + e_g + e_t)
