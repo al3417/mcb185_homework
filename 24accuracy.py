@@ -1,8 +1,6 @@
 import math
 import sys
 
-import sys
-
 def find_af(tp, fp, tn, fn):
 
 	if tp + fp != 0 and tp + fn != 0:
