@@ -36,7 +36,7 @@ def find_e(a, c, g, t):
 
 	return entropy
 
-print(find_e(4,2,3,7))	# Entropy = 1.849
-print(find_e(1,1,1,1))	# Entropy = 2
-print(find_e(4,4,0,0))	# Entropy = 1.0
-print(find_e(2,0,2,0))	# Entropy = 1.0
+print(find_e(4, 2, 3, 7))	# Entropy = 1.849
+print(find_e(1, 1, 1, 1))	# Entropy = 2
+print(find_e(4, 4, 0, 0))	# Entropy = 1.0
+print(find_e(2, 0, 2, 0))	# Entropy = 1.0

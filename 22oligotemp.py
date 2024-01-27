@@ -8,9 +8,10 @@ def find_tm(a, c, g, t):
 		t_m = 64.9 + 41 * (g + c - 16.4) / (a + t + g + c)
 		return t_m
 
-print('The melting temperature of AACCGGTT is :' + str(find_tm(2,2,2,2)))	# 24
+print('The melting temperature of AACCGGTT is :' + str(find_tm(2, 2, 2, 2)))	# 24
 
-print('The melting temperature of AACCCCGGTTTTTTTT is :' + str(find_tm(2,4,2,8)))	# 38.25
+print('The melting temperature of AACCCCGGTTTTTTTT is :' 
+			+ str(find_tm(2, 4, 2, 8)))	# 38.25
 
 
 

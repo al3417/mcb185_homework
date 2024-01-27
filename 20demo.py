@@ -17,7 +17,7 @@ print(5%2)     # remainder
 print(5*(2+1))
 
 print(abs(-3))                  # absolute value
-print(pow(3,4))                 # 3 to the power of 4
+print(pow(3, 4))                 # 3 to the power of 4
 print(round(1.12345, ndigits=3)) # round to 3 digits
 print(math.ceil(1.6))         	# round up
 print(math.floor(1.6))          # round down
@@ -56,7 +56,7 @@ def pythagoras(a, b):
 	assert(b > 0)     # is b bigger than 0?
 	c = math.sqrt(a**2 + b**2)
 	return c
-# print(pythagoras(-1,1)) <---- func aborts when assertion failed
+# print(pythagoras(-1, 1)) <---- func aborts when assertion failed
 # or use sys.exit() to write your own error message
 
 #-------------------------Practice--------------------------
@@ -112,7 +112,7 @@ print('Celsius is: ' + str(ctemp(78)))
 
 # Convert speed
 def mph(kph):       # from kph to mph
-	assert (kph >= 0)
+	assert(kph >= 0)
 	result = kph / 1.609
 	return result
 print('The speed is: ' + str(mph(100)))
@@ -122,7 +122,8 @@ def conc(dilu, reading):
 	assert(dilu > 0 and reading > 0)
 	result = dilu * reading * 50
 	return result
-print('The concentration at 260nm is: ' + str(conc(2, 1.2)) + ' micrograms per milliliter')
+print('The concentration at 260nm is: ' + 
+		str(conc(2, 1.2)) + ' micrograms per milliliter')
 
 # Distance between two points
 def dis(x1, y1, x2, y2):
@@ -170,7 +171,7 @@ if not False:
 a = 0.3
 b = 0.1 * 3 # which will give 0.30000000000000004 not 0.3
 print(abs(a - b))
-if abs(a - b) < 1e-9: print ('close enough')
+if abs(a - b) < 1e-9: print('close enough')
 # or just use math.isclose()
 if math.isclose(a, b): print('close enough') 
 
@@ -178,7 +179,7 @@ if math.isclose(a, b): print('close enough')
 s1 = 'A'
 s2 = 'B'
 s3 = 'a'
-if s1 < s2: print ('A < B') # actually comparing their ASCII value
+if s1 < s2: print('A < B') # actually comparing their ASCII value
 if s2 < s3: print('B < a')
 
 # Mismatched Type Error
@@ -190,18 +191,18 @@ s = 'G'
 
 # If a number is an integer
 def isinteger(i):
-	if i - (math.floor(i)) == 0: print ('The number is an integer.')
+	if i - (math.floor(i)) == 0: print('The number is an integer.')
 	else: print('The number is not an integer.')
 isinteger(27.8)
 isinteger(14)
 
 # If a number is odd
 def isodd(i):
-	if i % 2 == 0: print ('It is an odd number')
-	else: print ('It is NOT an odd number')
+	if i % 2 == 0: print('It is an odd number')
+	else: print('It is NOT an odd number')
 isodd(8)
 
-# If a number is a valid probability (?)
+# If a number is a valid probability(?)
 
 # Return molecular weight of DNA letter
 def weight(base):
