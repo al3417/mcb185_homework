@@ -8,9 +8,9 @@ def find_af(tp, fp, tn, fn):
 		rec	=	tp / (tp + fn)
 
 		if pre != 0 and rec != 0:
-			return	(tp + tn) / (tp + tn + fp + fn), ((2 * pre * rec) / (pre + rec))
+			return(tp + tn) / (tp + tn + fp + fn), ((2 * pre * rec) / (pre + rec))
 		elif tp == 0:
-			return	(tp + tn) / (tp + tn + fp + fn), 0
+			return(tp + tn) / (tp + tn + fp + fn), 0
 		else:
 			return 0, 0
 
