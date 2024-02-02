@@ -1,6 +1,10 @@
 seq = 'ACGT'
 
-print('   A  C  G  T')
+print('  ', end=' ')
+for nt in seq:
+	print(nt, end='  ')
+print()
+
 for i in seq:
 	print(i, end=' ')
 	for j in seq:
