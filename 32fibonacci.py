@@ -1,7 +1,10 @@
 def fibo(n):
-	a, b = 0, 1
+	a = 0
+	b = 1
 	for i in range(n):
 		print(a, end=',')
-		a, b = b, a + b
+		c = a	# the order of events matters
+		a = b
+		b = c + b
 
 fibo(10)
