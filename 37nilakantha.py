@@ -9,6 +9,12 @@ def pi(limit):
 		pi = pi + n
 	return pi
 
-
+print(pi(1))
+print(pi(2))
 print(pi(3))
+print(pi(10))
+print(pi(20))
 print(pi(30))
+print(pi(50))
+print(pi(100))
+

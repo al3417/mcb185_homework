@@ -1,6 +1,6 @@
 import math
 
-limit = 101
+limit = 20
 def triples(limit):
 	for i in range(1, limit):
 		for j in range(i, limit):
