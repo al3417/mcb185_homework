@@ -24,11 +24,11 @@ def calc_prob(dc):
 	for i in range(times):
 
 # all True result from saving_throw()
-		if saving_throw(dc, 0, 0):
+		if saving_throw(dc, 0, 0) == True:
 			normal_s += 1
-		if saving_throw(dc, 1, 0):
+		if saving_throw(dc, 1, 0) == True:
 			ad_s += 1
-		if saving_throw(dc, 0, 1):
+		if saving_throw(dc, 0, 1) == True:
 			ds_s += 1
 
 	normal_prob = normal_s / times

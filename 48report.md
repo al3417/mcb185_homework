@@ -1,6 +1,6 @@
 ## 45dndstats.py
 
-3D6  avg score  is 10.58
+3D6  avg score  is 10.54
 
 3D6r1 avg score is 11.83
 
@@ -12,11 +12,11 @@
 
 ## 46savingthrows.py
 
-| Probability of success of.. | DC=5  | DC=10 | DC=15 |
-| --------------------------- | ----- | ----- | ----- |
-| Normal                      | 0.811 | 0.539 | 0.34  |
-| Advantage                   | 0.953 | 0.784 | 0.524 |
-| Disadvantage                | 0.636 | 0.328 | 0.095 |
+| Probability of success of.. | Normal | Advantage | Disadvantage |
+| --------------------------- | ------ | --------- | ------------ |
+| DC=5                        | 0.811  | 0.539     | 0.34         |
+| DC=10                       | 0.953  | 0.784     | 0.524        |
+| DC=15                       | 0.636  | 0.328     | 0.095        |
 
 
 

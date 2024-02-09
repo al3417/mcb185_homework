@@ -1,7 +1,7 @@
 import random
 
 # 3D6
-tot_rolls = 100
+tot_rolls = 10000
 
 def dnd_3d6():
 	tot_score = 0
@@ -11,7 +11,7 @@ def dnd_3d6():
 	return avg
 
 # 3D6r1
-tot_rolls = 100
+tot_rolls = 10000
 
 def dnd_3d6r1():
 	tot_score = 0
@@ -28,7 +28,7 @@ def dnd_3d6r1():
 	return avg
 
 #3D6x2
-tot_rolls = 100
+tot_rolls = 10000
 
 def dnd_3d6x2():
 	tot_score = 0
@@ -49,7 +49,7 @@ def dnd_3d6x2():
 	return avg
 
 # 4D6d1
-tot_rolls = 100
+tot_rolls = 10000
 
 def dnd_4d6d1():
 	tot_score = 0
