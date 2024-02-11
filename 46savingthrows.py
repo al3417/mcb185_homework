@@ -3,15 +3,13 @@ import random
 def saving_throw(dc, ad, ds):
 	r1 = random.randint(1, 20)
 	roll = r1
-
-	if ad == 1 or ds == 1:
-		r2 = random.randint(1, 20)
-		if ad == 1:
-			if r1 > r2: roll = r1
-			else:		roll = r2
-		elif ds == 1:
-			if r1 < r2: roll =r1
-			else:		roll = r2
+	r2 = random.randint(1, 20)
+	if ad == 1:
+		if r1 > r2: roll = r1
+		else:		roll = r2
+	elif ds == 1:
+		if r1 < r2: roll =r1
+		else:		roll = r2
 	
 	return roll >= dc	# boolean result
 
@@ -22,7 +20,6 @@ def calc_prob(dc):
 	ds_s = 0
 	
 	for i in range(times):
-
 # all True result from saving_throw()
 		if saving_throw(dc, 0, 0) == True:
 			normal_s += 1
