@@ -16,7 +16,3 @@ def est_pi():
 		print(pi)
 
 est_pi()
-
-
-
-

@@ -44,6 +44,3 @@ for i in range(games):
 print(total / games)	# avg score of the game
 print(zeroes / games)	# % of ending with a score of zero
 
-
-# How often does a player end a game with a score of zero?
-
