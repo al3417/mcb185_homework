@@ -4,7 +4,7 @@ import math
 probs = []
 for arg in sys.argv[1:]:
 	f = float(arg)
-	assert(f > 0 and f < 1)
+	if f <= 0 or f >= 1: sys.exit('error: not a probability')
 	probs.append(float(arg))
 
 total = 0

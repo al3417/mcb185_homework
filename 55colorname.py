@@ -20,9 +20,11 @@ def find_color(file, R, G, B):
 			words = line.split('\t')
 			color_name = words[0]
 			rgb = words[2]
-			r, g, b = rgb.split(',')
-			r, g, b = int(r), int(g), int(b)
-			
+			ind_rgb = rgb.split(',')
+			r = int(ind_rgb[0])
+			g = int(ind_rgb[1])
+			b = int(ind_rgb[2])
+
 			distance = dtc((R, G, B), (r, g, b))
 			if distance < min_distance:
 				min_distance = distance

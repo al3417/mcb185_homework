@@ -7,7 +7,8 @@ people = int(sys.argv[3])
 
 def birthday(trials, days, people):
 	count = 0
-	for _ in range(trials):
+
+	for  n in range(trials):
 		birthdays = []
 		for i in range(people):
 			bday = random.randint(0, days - 1)
