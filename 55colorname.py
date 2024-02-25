@@ -15,7 +15,7 @@ def find_color(file, R, G, B):
 	closest_color = None
 	min_distance = 100000000
 
-	with open(file, 'rt') as file:
+	with open(file) as file:
 		for line in file:
 			words = line.split('\t')
 			color_name = words[0]
