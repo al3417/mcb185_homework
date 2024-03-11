@@ -50,7 +50,7 @@ def genefinder(fasta, min_length):
 						end = (pos + end_pos) * 3 + frame_offset
 
 						if (end - start + 1) >= min_length:
-							gff_line = f"{name}\tgenefinder\tCDS\t{start + 1}\t{end + 1}\t.\t{strand}\t0\tID={i}"
+							gff_line = f'{name}\tgenefinder\tCDS\t{start + 1}\t{end + 1}\t.\t{strand}\t0\tID={i}'
 							print(gff_line)
 							i += 1
 

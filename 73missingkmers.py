@@ -31,7 +31,7 @@ def missing_kmers(file, limit):
 
 		if len(missing_kmers) > 0:
 			found_missing = True
-			print(f"found {len(missing_kmers)} missing kmers:")
+			print(f'found {len(missing_kmers)} missing kmers:)
 			for kmer in missing_kmers:
 				print(kmer)
 		else:
