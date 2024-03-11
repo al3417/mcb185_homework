@@ -89,7 +89,7 @@ def slice_protein(aa_frames):
 
 				if end_pos != -1:
 					end_pos += i
-					protein = aa_seq[i:end_pos]  # M to before *
+					protein = aa_seq[i:end_pos]  
 					all_proteins.append(protein)
 					i = end_pos + 1  # move i after *
 				else:

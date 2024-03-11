@@ -10,7 +10,6 @@
 
 import mcb185
 import sys
-import dogma
 
 w = 1000
 
@@ -25,7 +24,7 @@ for name, seq in mcb185.read_fasta(sys.argv[1]):
 		out_nt = seq[i - 1]
 		if out_nt == 'G':
 			gc_count	-= 1
-			g_count 	-= 1
+			g_count	-= 1
 		elif out_nt == 'C':
 			gc_count	-= 1
 			c_count		-= 1
