@@ -29,7 +29,7 @@ entropy_threshold = float(sys.argv[3])
 def mask(fasta, window_size, entropy_threshold):
 	for name, seq in mcb185.read_fasta(fasta):
 		print(f'>{name}')
-		individual_nts = list(seq)
+		individual_nts = list
 
 		for i in range(0, len(seq) - window_size + 1):
 			window = seq[i:i+window_size]
