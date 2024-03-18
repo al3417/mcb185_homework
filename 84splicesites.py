@@ -85,8 +85,8 @@ def pwm_donors(d_plus, d_minus):
 			position_counts = pwm[nt]
 			position_counts[i] += 1
 
-	print("AC DEMO1\nXX\nID DON\nXX\nDE splice donor")
-	print("PO      A       C       G       T")
+	print('AC DEMO1\nXX\nID DON\nXX\nDE splice donor')
+	print('PO      A       C       G       T')
 
 	A = pwm['A']
 	C = pwm['C']
@@ -114,8 +114,8 @@ def pwm_acceptors(a_plus, a_minus):
 			position_counts = pwm[nt]
 			position_counts[i] += 1
 
-	print("AC DEMO1\nXX\nID DON\nXX\nDE splice acceptor")
-	print("PO      A       C       G       T")
+	print('AC DEMO1\nXX\nID DON\nXX\nDE splice acceptor')
+	print('PO      A       C       G       T')
 
 	A = pwm['A']
 	C = pwm['C']

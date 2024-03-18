@@ -116,12 +116,12 @@ def	gbff_file(filepath):
 	locate_seq(gene_positions, sequence)
 	nt_counts = count_nts(gene_positions)
 
-	print("AC IMTSU001")
-	print("XX")
-	print("ID ECKOZ")
-	print("XX")
-	print("DE I made this shit up")
-	print("PO      A       C       G       T")
+	print('AC IMTSU001')
+	print('XX')
+	print('ID ECKOZ')
+	print('XX')
+	print('DE I made this shit up')
+	print('PO      A       C       G       T')
 
 	for i in range(14):
 		a_count = nt_counts['A'][i]
