@@ -90,7 +90,7 @@ def	gbff_file(filepath):
 							'strand': 'complementary'
 						})
 				else:
-					n_info_start = line.find('gene') + len('gene')
+					n_info_start = line.find('gene') + 4
 					n_info = line[n_info_start:].rstrip()
 					positions = n_info.split('..')
 
@@ -108,7 +108,8 @@ def	gbff_file(filepath):
 				if line.startswith('//'):
 					data_section = False
 				else:
-					sequence_parts += extract_seq(line)
+					for seq_part in extract_seq(line):
+						sequence_parts.append(seq_part)
 					data_section = True
 
 	sequence = ''.join(sequence_parts)
