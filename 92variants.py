@@ -41,4 +41,4 @@ with gzip.open(arg.vcf, 'rt') as vcf:
 
 			feature_list = ','.join(features.keys())
 			if has_feature == True:
-				print(f"{roman_vcf}\t{position}\t{feature_list}")
+				print(f'{roman_vcf}\t{position}\t{feature_list}')

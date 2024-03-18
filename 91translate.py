@@ -50,7 +50,7 @@ def tln():
 			proteins += slice_protein([anti_translated_seq])
 		long_proteins = find_proteins(proteins, arg.min)
 		for protein in long_proteins:
-			print(f">{name}")
+			print(f'>{name}')
 			print(protein)
 
 tln()
