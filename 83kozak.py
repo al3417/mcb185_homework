@@ -45,7 +45,7 @@ def	locate_seq(gene_positions, sequence):
 			
 			comp_end_pos = gene['comp_start'] + 9
 			extracted_sequence = sequence[comp_start_pos: comp_end_pos]
-			gene['sequence'] = mcb185.anti_seq(extracted_sequence)
+			gene['sequence'] = mcb185.anti_seq(extracted_sequence) 
 
 def	count_nts(gene_positions):
 	count_dict = {
@@ -73,7 +73,7 @@ def	gbff_file(filepath):
 		for line in fp:
 			line = line.rstrip()
 
-			if line.startswith('     gene'):
+			if line.startswith('     CDS'):
 				if 'complement' in line:
 					c_info_start = line.find('(') + 1
 					c_info_end = line[c_info_start:].find(')') + c_info_start
@@ -90,7 +90,7 @@ def	gbff_file(filepath):
 							'strand': 'complementary'
 						})
 				else:
-					n_info_start = line.find('gene') + 4
+					n_info_start = line.find('CDS') + 4
 					n_info = line[n_info_start:].rstrip()
 					positions = n_info.split('..')
 
