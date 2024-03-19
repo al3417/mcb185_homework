@@ -126,10 +126,10 @@ def pwm_acceptors(a_plus, a_minus):
 		print(f'{i+1:<8}{A[i]:<8}{C[i]:<8}{G[i]:<8}{T[i]:<8}')
 	print('XX\n//\n')
 
-filepath = '/home/zhe/Code/MCB185/data/C.elegans.fa.gz'
+filepath = sys.argv[1]
 seq = load_seq(filepath)
 
-gff_file = '/home/zhe/Code/MCB185/data/C.elegans.gff.gz'
+gff_file = sys.argv[2]
 plus_introns, minus_introns = process_gff_file(gff_file, seq)
 
 extracted_sites = extract_sites(plus_introns + minus_introns, seq)
