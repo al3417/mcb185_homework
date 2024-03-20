@@ -81,7 +81,7 @@ def find_entropy(seq):
 			entropy = entropy - (probability * math.log2(probability))
 	return entropy
 
-def mask(fasta, window_size, entropy_threshold):
+def soft_mask(fasta, window_size, entropy_threshold):
 	for name, seq in mcb185.read_fasta(fasta):
 		print(f'>{name}')
 		individual_nts = list(seq)
@@ -100,5 +100,26 @@ def mask(fasta, window_size, entropy_threshold):
 		for i in range(0, len(masked_seq), 60):
 			print(masked_seq[i:i+60])
 
-mask(fasta, window_size, entropy_threshold)
+def mask(fasta, window_size, entropy_threshold):
+	for name, seq in mcb185.read_fasta(fasta):
+		print(f'>{name}')
+		individual_nts = list(seq)
+
+		for i in range(0, len(seq) - window_size + 1):
+			window = seq[i:i+window_size]
+			if find_entropy(window) < entropy_threshold: 
+				for nt in range(i, i + (window_size)): 
+					individual_nts[nt] = 'N'
+		
+		masked_seq = ''.join(individual_nts)
+		for i in range(0, len(masked_seq), 60):
+			print(masked_seq[i:i+60])
+
+
+
+if arg.lower == True:
+	soft_mask(fasta, window_size, entropy_threshold)
+
+if arg.lower == False:
+	mask(fasta, window_size, entropy_threshold)
 
