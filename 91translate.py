@@ -76,7 +76,7 @@ def check_all_aa_length_100(aa_frames):
 			all_meet_length_req = False
 			break
 
-	if all_meet_length_req:
+	if all_meet_length_req == True:
 		print('All aa meet length req')
 	else:
 		print('Not meet')
