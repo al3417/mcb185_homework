@@ -17,42 +17,73 @@ file_name = arg.file
 min_length = arg.min
 check_anti = arg.anti
 
+def generate_frames(seq):
+	frames = []
+	# Forward
+	frames.append(seq)
+	frames.append(seq[1:])  # skip 1nt
+	frames.append(seq[2:])  # skip 2nt
 
-def find_orf(seq):
-	start_codon = 'ATG'
-	stop_codons = {'TAA', 'TAG', 'TGA'}
-	orf = ''
-	
-	start_index = seq.find(start_codon)
-	if start_index != -1:
-		truc_seq = seq[start_index:]
+	# Reverse
+	reverse_seq = dogma.revcomp(seq)
+	frames.append(reverse_seq)
+	frames.append(reverse_seq[1:]) 
+	frames.append(reverse_seq[2:])
 
-		for i in range(0, len(truc_seq), 3):
-			codon = truc_seq[i:i+3]
-			if codon in stop_codons:
-				orf = truc_seq[:i+3]
-				break
-	
-	return orf
+	return frames
+
+def translate_frames(frames):
+	aa_frames = []
+	for frame in frames:
+		aa_frames.append(dogma.translate(frame))
+	return aa_frames
+
+def slice_protein(aa_frames):
+	all_proteins = []
+
+	for aa_seq in aa_frames:
+		i = 0
+		while i < len(aa_seq):
+			if aa_seq[i] == 'M':
+				end_pos = aa_seq[i:].find('*')  # find * after M and new value for end
+
+				if end_pos != -1:
+					end_pos += i
+					protein = aa_seq[i:end_pos]  
+					all_proteins.append(protein)
+					i = end_pos + 1  # move i after *
+				else:
+					break
+			else:
+				i += 1
+
+	return all_proteins
+
+def find_proteins(proteins, min_length):
+	long_enough_proteins = []
+	for protein in proteins:
+		if len(protein) >= min_length:
+			long_enough_proteins.append(protein)
+	return long_enough_proteins
 
 def process_sequences(file_name, min_length, check_anti):
+	for name, seq in mcb185.read_fasta(file_name):
 
-	for name, sequence in mcb185.read_fasta(file_name):
-		orf = find_orf(sequence)
-		protein = dogma.translate(orf)
-		if len(protein) >= min_length:
+		frames = generate_frames(seq)
+		if check_anti == False:
+			frames = frames[:3]
+
+		aa_frames = translate_frames(frames)
+		sliced_proteins = slice_protein(aa_frames)
+		long_enough_proteins = find_proteins(sliced_proteins, min_length)
+
+		longest_protein = ''
+		for protein in long_enough_proteins:
+			if len(protein) > len(longest_protein):
+				longest_protein = protein
 			print(f'>{name}')
 			for i in range(0, len(protein), 60):
 				print(protein[i:i+60].rstrip('*'))
-
-		if check_anti == True:
-			anti_seq = mcb185.anti_seq(sequence)
-			anti_orf = find_orf(anti_seq)
-			anti_protein = dogma.translate(anti_orf)
-			if len(anti_protein) >= min_length:
-				print(f'>{name}')
-				for i in range(0, len(anti_protein), 60):
-					print(anti_protein[i:i+60].rstrip('*'))
 
 process_sequences(file_name, min_length, check_anti)
 
