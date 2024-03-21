@@ -77,9 +77,9 @@ def check_all_aa_length_100(aa_frames):
 			break
 
 	if all_meet_length_req:
-		print("All aa meet length req")
+		print('All aa meet length req')
 	else:
-		print("Not meet")
+		print('Not meet')
 '''
 
 def process_sequences(file_name, min_length, check_anti):
