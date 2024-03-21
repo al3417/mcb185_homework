@@ -66,6 +66,22 @@ def find_proteins(proteins, min_length):
 			long_enough_proteins.append(protein)
 	return long_enough_proteins
 
+'''
+def check_all_aa_length_100(aa_frames):
+	all_meet_length_req = True
+
+	for aa_seq in aa_frames:
+		if len(aa_seq) < 100:
+			
+			all_meet_length_req = False
+			break
+
+	if all_meet_length_req:
+		print("All aa meet length req")
+	else:
+		print("Not meet")
+'''
+
 def process_sequences(file_name, min_length, check_anti):
 	for name, seq in mcb185.read_fasta(file_name):
 
@@ -74,16 +90,24 @@ def process_sequences(file_name, min_length, check_anti):
 			frames = frames[:3]
 
 		aa_frames = translate_frames(frames)
+		
+		# check_all_aa_length_100(aa_frames)
+
 		sliced_proteins = slice_protein(aa_frames)
 		long_enough_proteins = find_proteins(sliced_proteins, min_length)
 
 		longest_protein = ''
+		longest_found = False
 		for protein in long_enough_proteins:
 			if len(protein) > len(longest_protein):
 				longest_protein = protein
+				longest_found = True
+
+		if longest_found == True:
 			print(f'>{name}')
 			for i in range(0, len(protein), 60):
-				print(protein[i:i+60].rstrip('*'))
+				print(longest_protein[i:i+60].rstrip('*'))
 
 process_sequences(file_name, min_length, check_anti)
+
 
